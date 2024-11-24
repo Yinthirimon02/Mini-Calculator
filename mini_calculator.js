@@ -2,5 +2,15 @@ let result = document.getElementById('result');
 let temp = ""
 
 function insert(para){
-    temp = para.innerHTML;
+    if(para == 'calculate'){
+        result.innerHTML = eval(temp)    //calculate with math operation from string
+    }else{
+        temp += para.innerHTML;     //store all user data
+        result.innerHTML = temp     // to see user number
+    }
+}
+
+function clearScreen(){
+    temp = ""
+    result.innerHTML = 0
 }
